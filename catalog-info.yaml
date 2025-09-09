@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-wdvnbchy-gitops
+  description: This is GitOps manifest for go-wdvnbchy   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-wdvnbchy
+    backstage.io/kubernetes-id: go-wdvnbchy 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-wdvnbchy-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-wdvnbchy
